@@ -13,15 +13,18 @@
     </tr>
 
     @foreach (Claim claim in ClaimsPrincipal.Current.Claims)
-
     {
-        string myClaimType = @claim.GetType().ToString();
         <tr>
-
-            <td class="claim-type claim-data"> @myClaimType </td>
+            <td class="claim-type claim-data">@claim.Type</td>
+            if (@claim.Type = "emails")
+            {
+            <td class="claim-data">@claim.Value + " Found it!"</td>
+            }
+            else
+            {
             <td class="claim-data">@claim.Value</td>
-           
-       
+            }
+            
             
             
         </tr>
