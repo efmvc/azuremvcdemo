@@ -30,5 +30,10 @@ namespace WebApp_OpenIDConnect_DotNet_B2C.Controllers
 
             return View("Error");
         }
+        public ActionResult Member()
+        {
+            return View();
+        }
+                
     }
 }
