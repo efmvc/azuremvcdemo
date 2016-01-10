@@ -16,9 +16,9 @@
     {
         <tr>
             <td class="claim-type claim-data">@claim.Type</td>
-            if (@claim.Type = "emails")
+            if (@claim.Type.ToString() = "emails")
             {
-            <td class="claim-data">@claim.Value + " Found it!"</td>
+            <td class="claim-data">@claim.Value & " Found Email!"</td>
             }
             else
             {
