@@ -4,5 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Member Content!</h2>
+@if (Request.IsAuthenticated)
 
+{
+
+    <h2>Member Content!</h2>
+
+}
+else
+{
+    <h2>Access denied!</h2>
+}
