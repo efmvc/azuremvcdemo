@@ -1,10 +1,11 @@
-﻿@{
+﻿@using System.Security.Claims
+@{
     ViewBag.Title = "Home Page";
 }
 @if (Request.IsAuthenticated)
 {
-    <div class="jumbotron">
-        <h1>Welcome Member!</h1>
+        <div class="jumbotron">
+        <h1>Welcome @ViewBag.claimName</h1>
         <p class="lead">You can manage all your subscriptions to Azure in one Dashboard here!</p>
         <p><a href="/Home/Member" class="btn btn-primary btn-large">Member Content!</a></p>
     </div>

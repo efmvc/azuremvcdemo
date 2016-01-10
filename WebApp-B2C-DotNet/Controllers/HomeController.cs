@@ -12,7 +12,15 @@ namespace WebApp_OpenIDConnect_DotNet_B2C.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            if (Request.IsAuthenticated)
+            {
+
+               return Redirect("Home/Member");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         // You can use the PolicyAuthorize decorator to execute a certain policy if the user is not already signed into the app.
@@ -32,6 +40,14 @@ namespace WebApp_OpenIDConnect_DotNet_B2C.Controllers
         }
         public ActionResult Member()
         {
+
+            foreach (Claim claim in ClaimsPrincipal.Current.Claims)
+            {
+                if (@claim.Type.Equals("name"))
+                {
+                    ViewBag.claimName = claim.Value;
+                }
+            }
             return View();
         }
                 
