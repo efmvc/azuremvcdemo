@@ -1,6 +1,17 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@if (Request.IsAuthenticated)
+{
+    <div class="jumbotron">
+        <h1>Welcome Member!</h1>
+        <p class="lead">You can manage all your subscriptions to Azure in one Dashboard here!</p>
+        <p><a href="/Home/Member" class="btn btn-primary btn-large">Member Content!</a></p>
+    </div>
+
+}
+else
+{
 
 <div class="jumbotron">
     <h1>B2C ASP.NET!</h1>
@@ -29,3 +40,4 @@
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+}
