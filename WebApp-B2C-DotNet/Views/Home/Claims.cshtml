@@ -16,19 +16,19 @@
     {
         string myClaim = @claim.Value;
         string search = "emails";
-        <tr>
+        if (@claim.Value.Equals(@search) == true)
+        {        
+            <tr>
             <td class="claim-type claim-data">@claim.Type</td>
-            if (@claim.Value.Equals(@search).Equals(true))
-            {
             <td class="claim-data">@claim.Value Found email!</td>
-            }
-            else
+         </tr>
+        }
+          else
             {
+            <td class="claim-type claim-data">@claim.Type</td>
             <td class="claim-data">@claim.Value</td>
             }
-            
-            
-            
-        </tr>
-    }
+         
+                      
+        }
 </table>
